@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.js"></script>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			#box {
+				width: 1200px;
+				margin: 50px auto;
+				background-color: white;
+				padding-top:50px;
+				border-radius: 20px;
+			}
+              #box::after{
+				  content: "";
+				  display: table;
+				clear: both;
+			  }
+			.shang_top {
+				height: 60px;
+				width: 1000px;
+				margin: 0px auto;
+			}
+
+			.shang_top>ul>li {
+				width: 200px;
+				float: left;
+				font-size: 20px;
+				list-style: none;
+			}
+
+			.shang_xq {
+				width: 1000px;
+				margin: 0px auto;
+			}
+
+			.shang_xq>ul>li {
+				list-style: none;
+				width: 200px;
+				float: left;
+				height: 150px;
+				line-height: 150px;
+			}
+
+			.shang_xq>ul {
+				height: 150px;
+			 background-color:#F5F5F5;
+				text-align: center;
+				margin-top: 25px;			
+				border-radius:20px ;
+				}
+				.xq_button{
+					height: 50px;
+					margin-top: 20px;
+					line-height: 50px;
+				}
+				.xq_button>span{
+					font-size: 20px;
+					float:right;
+					margin-right:30px ;
+				}
+				.topn{
+					height: 70px;
+					background-color:white;
+					margin-top: 50px;
+					
+				}
+				.topn>img{
+					height: 70px;
+					margin-left: 120px;
+				    vertical-align: bottom;
+				}
+					
+				.an{
+				    height: 35px;
+				    border: 0px;
+				    background-color: red;
+				    color: white;
+				    font-size: 15px;
+				    width: 100px;
+				    border-radius: 6px;
+				    font-weight: 700;
+					cursor: pointer;
+				}
+				.jiesao{
+				display: inline-block;
+					margin-top: 20px;
+					line-height: initial;
+									
+			}
+		</style>
+	</head>
+	<body style="background-color: #e0e7e9;">
+		<div id="maxbox">
+		<div class="topn">
+				<img src="img/gouwu.png">
+				<span style="font-size: 40px;">购物车</span>
+				<span @click="aa" style="font-size: 25px;font-weight: 500; float: right; margin: 20px 136px 0px 0px; cursor: pointer;">返回首页</span>
+			</div>
+		<div id="box">
+			
+			<div class="shang_top">
+				<ul style="text-align: center;">
+					<li><span>商品</span></li>
+					<li><span>介绍</span></li>
+					<li><span>价格</span></li>
+					<li><span>数量</span></li>
+					<li style="width: 70px;"><span>操作</span></li>
+				</ul>
+			</div>
+			<div class="shang_xq">
+				<ul v-for="(a,n) in gwsrr">
+					<li><img v-bind:src="a.img" style="height: 100px;margin-top: 20px;border-radius:10px ;"></li>
+					<li><span class="jiesao">{{a.jie}}</span></li>
+					<li><span style="color: red;">￥{{a.jia}}</span></li>
+					<li><span>1</span></li>
+					<li style=" width: 70px;"><button class="an" @click="yichu(n)">移除购物车</button></li>
+				</ul>
+				<div class="xq_button">
+					<span>合计:{{zongjia}}元</span>
+					<span>{{zong}}件商品</span>
+					
+				</div>
+			</div>
+		</div>
+		</div>
+		<script>
+			var vm = new Vue({
+				el: "#maxbox",
+				data: {
+					gwsrr: [],
+					zong:"",
+					zongjia:0,
+					yong:"",
+				},
+				created() {
+					var sz = window.opener["gw"];
+					for (var i = 0; i < sz.length; i++) {
+						this.gwsrr.push(sz[i]);
+					};
+                 this.zong=this.gwsrr.length;
+					for(var d=0; d<this.gwsrr.length;d++){
+						this.zongjia=this.zongjia+parseInt(this.gwsrr[d].jia);
+					}
+					this.yong=window.opener["yong"];
+				},
+			   methods:{
+				   yichu(n){
+					 this.zongjia=this.zongjia-parseInt(this.gwsrr[n].jia)
+					  this.gwsrr.splice(n,1); 
+					   this.zong=this.gwsrr.length;
+				   },
+				   aa(){
+				   	window.open("sou.html")
+				   	window["zhi"]=true;
+				   	window["gwyong"]=this.yong;
+					window["gwc"]=this.gwsrr;
+				   }
+			   },
+			});
+		</script>
+	</body>
+</html>

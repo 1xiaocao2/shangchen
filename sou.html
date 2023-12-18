@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Vue期末作业</title>
+		<script src="vue.js"></script>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			#maxBox {
+				width: 1464.800px;
+				margin: 0px auto;
+			}
+
+			#maxBox::after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+
+			.box {
+				width: 1050.250px;
+				float: left;
+				margin: 0px auto;
+				border-radius: 17px;
+				background-color: white;
+				position: relative;
+
+			}
+
+			.top {
+				width: 100%;
+				height: 100px;
+				line-height: 100px;
+			}
+
+			.top>ul>li {
+				list-style: none;
+				float: left;
+				font-size: 19px;
+				margin-left: 46px;
+			}
+
+			.yan {
+			 color: black;
+				text-decoration: none;
+				font-weight: 500;
+			}
+
+			.top>input {
+				float: right;
+				height: 30px;
+				margin-top: 40px;
+				width: 280px;
+				background-image: url(img/搜索.png);
+				background-size: 30px;
+				background-repeat: no-repeat;
+				padding-left: 30px;
+			}
+
+			.beiImg {
+				float: left;
+			}
+
+			.shang {
+				width: 100%;
+				height: 70px;
+				background-color: #f5f5f5;
+			}
+
+			#denglu {
+				line-height: 40px;
+				text-align: center;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background-color: aqua;
+				float: right;
+				margin-top: 35px;
+				margin-left: 10px;
+				cursor: pointer;
+			}
+
+			.left {
+				width: 630px;
+				height: 280px;
+				border-radius: 10px;
+				margin-left: 35px;
+				background-color: aqua;
+				float: left;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.right {
+				width: 320px;
+				height: 280px;
+				background-color: aliceblue;
+				
+				text-align: center;
+			}
+
+			.kuang {
+				width: 225px;
+				height: 30px;
+				margin-top: 30px;
+				background-repeat: no-repeat;
+				background-size: 30px;
+				padding-left: 35px;
+			}
+
+			.kuang:first-child {
+				margin-top: 60px;
+			}
+
+			.denglu {
+				font-weight: 700;
+				font-size: 20px;
+				width: 265px;
+				height: 40px;
+				background-color: aquamarine;
+				margin-top: 20px;
+			}
+
+			.left>img {
+				width: 630px;
+				height: 280px;
+				border-radius: 10px;
+			}
+
+			#maxBox::after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+
+			.imglun {
+				opacity: 1;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+
+			#leftbuttom {
+				position: absolute;
+				top: 115px;
+				left: 10px;
+				z-index: 1;
+				width: 40px;
+				border-radius: 39%;
+				color: white;
+				line-height: 39px;
+				height: 45px;
+				font-size: 45px;
+				background-color: rgba(0, 0, 0, 0.3);
+				cursor: pointer;
+			}
+
+			#rightbuttom {
+				position: absolute;
+				top: 100px;
+				right: 10px;
+				z-index: 1;
+				width: 40px;
+				border-radius: 39%;
+				color: white;
+				line-height: 39px;
+				height: 45px;
+				font-size: 45px;
+				background-color: rgba(0, 0, 0, 0.3);
+				cursor: pointer;
+			}
+
+			.spbox {
+				width: 986px;
+				margin-left: 33px;
+				margin-top: 20px;
+				float: left;
+			}
+
+			.chlidbox {
+				width: 480px;
+				height: 200px;
+				float: left;
+				margin-top: 10px;
+				border-radius: 10px;
+				background-color: #f7f9fa;
+			}
+
+			.chlidbox:hover {
+				box-shadow: 0px 0px 1px 1px orange;
+				cursor: pointer;
+			}
+
+			.chlidbox:nth-child(2n) {
+				margin-left: 25px;
+			}
+
+			.chlidimg {
+				float: left;
+				width: 170px;
+				margin: 10px;
+				height: 183px;
+				border-radius: 12px;
+			}
+
+			.jie {
+				margin: 20px 0px 0px 0px;
+				height: 135px;
+			}
+
+			.jia {
+		 	font-size: 25px;
+				color: #fd5000;
+			}
+
+			#sou {
+				color: #da295a;
+				font-weight: 800;
+			}
+
+			#dr{
+			width: 320px;
+			    height: 280px;
+			    background-color: white;
+				position: relative;
+				bottom: 0px;
+				text-align: center;
+				font-size: 30px;
+			}
+			.right_zong{
+				width: 320px;
+				height: 280px;
+				float: right;
+				margin-right:30px ;
+				overflow: hidden;
+			}
+			.huan{
+			text-decoration: none;
+			    font-size: 15px;
+			    float: right;
+			    margin: 20px;
+			    color: black;
+			}
+			.huan:hover{
+				color: red;
+			}
+			.gw{
+				    width: 85px;
+				    height: 30px;
+				    background-color: #f43434;
+				    color: white;
+				    border: 0px;
+				    font-weight: 700;
+				    font-size: 15px;
+				    margin-left: 100px;
+				    border-radius: 7px;
+					cursor: pointer;
+			}
+			.gw:active{   /* 点击变成黑色松开就会变回原样 */
+				color: yellow;
+			}
+			.sou{
+				float: right;
+				    width: 40px;
+				    margin-top: 40px;
+				    height: 33px;
+					cursor: pointer;
+			}
+			.xxti{
+			position: fixed;
+			    top: 50%;
+			    left: 45%;
+			    width: 150px;
+			    height: 40px;
+			    line-height: 40px;
+			    z-index: 1;
+			    color: white;
+			    font-weight: 700;
+			    border-radius: 7px;
+				border-radius: 10px;
+			    text-align: center;
+			    background-color: rgba(0, 0, 0,0.5);
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body style="background-color:#eae8e8">
+		<p class="xxti" id="ti">加入购物车成功！</p>
+		<div id="maxBox">
+			<div class="shang">
+				<img src="img/tubiao.png" style="width: 70px;margin-left:200px;vertical-align: middle;">
+				<span style="font-size:30px;margin-left: 10px;">购物网站</span>
+			</div>
+			<div class="beiImg">
+				<img src="img/背景图片.png" style="width: 200px; height: 899px;">
+			</div>
+			<div class="box">
+			
+				<div class="top">
+					<ul>
+						<li><a href="#" id="sou" class="yan" @click="souye($event)">商城首页</a></li>
+						<li><a href="#" @click="nan($event)" class="yan">男装</a></li>
+						<li><a href="#" class="yan" @click="nv($event)">女装</a></li>
+						<li><a href="#" class="yan" @click="lin($event)">零食</a></li>
+						<li><a href="#" class="yan" @click="dian($event)">电子</a></li>
+					</ul>
+					<img src="img/gouwu.png"style="height:40px;margin: 35px 20px 0px 15px; float:right; cursor: pointer;" title="购物车" @click="tiaozhuan()">
+					<button class="sou" @click="ss()">搜索</button>
+					<input type="text" v-model="text">
+				</div>
+				<div class="left">
+					<span id="leftbuttom" @click="left()"><</span>
+							<img src="img/可乐1.jpg" class="imglun">
+							<img src="img/酒1.jpg" class="imglun">
+							<img src="img/茶1.jpg" class="imglun">
+							<img src="img/薯片1.jpg" class="imglun">
+							<span id="rightbuttom" @click="right()">></span>
+				</div>
+				<div class="right_zong">
+				<div class="right">
+					<h3>登录界面</h3>
+					<input type="text" class="kuang" style="background-image: url('img/denglu.png');"
+						placeholder="请输入账号" id="d"><br>
+					<input type="password" class="kuang" style="background-image:url('img/mima.png');"
+						placeholder="请输入密码" id="m"><br>
+					<input type="button" value="登录" class="denglu" @click="denglu()">
+					<p ><a href="ZhuCe.html" class="huan">还没有账号点击注册</a></p>
+				</div>
+				<div id="dr">
+                    <img src="img/可莉.jpg" style="width: 100px;border-radius: 50%;margin-top: 40px;box-shadow: 0px 0px 1px 1px #e27575;">
+					<p>欢迎你!{{zhuyong}}</p>
+				</div>
+				</div>
+			
+				<div class="spbox">
+					
+					<div class="chlidbox" v-for="(a,n) in srr">
+						<img v-bind:src="a.img" class="chlidimg">
+						<p class="jie">{{a.jie}}</p>
+						<span class="jia">¥{{a.jia}}</span>
+						<button class="gw"@click="goumai(n)">加入购物车</button>
+					</div>
+				</div>
+				<h1 style="float: left;margin-left: 300px;color: #d62e2e;">{{ti}}</h1>
+			</div>
+			<div class="beiImg">
+				<img src="img/背景图片T.png" style="width: 213px; height: 899px;">
+			</div>
+		</div>
+		<script>
+			var vm = new Vue({
+				el: "#maxBox",
+				data: {
+					sou: 3, //这个是img的索引
+					imgs: document.getElementsByClassName("imglun"), //这个访问使用了imglun这个类的所有元素
+					ding: null, //定义一个变量接收定时器
+					srr: [{img: "零食/5.jpg",jie: "美国进口薯片",jia:"234"},
+						{img: "男/0.jpg",jie: "商务休闲男士西装",jia:"432"},
+						{img: "男/1.jpg",jie: "纯色立领薄款衬衫式夹克外套",jia:"123"},
+						{img: "女/2.jpg",jie: "2023年新款娃娃领短袖上衣服洋气小衫女装",jia:"234"},
+						{img: "电子/0.jpg",jie: "华为MateX2",jia:"3453"},
+						{img: "电子/2.jpg",jie: "小米11por",jia:"2344"},
+						{img: "零食/3.jpg",jie: "良品铺子7口味麻薯组合礼盒",jia:"312"},
+						{img: "电子/4.jpg",jie: "联想ThinkBook16",jia:"12334"},
+						{img: "电子/6.jpg",jie: "苹果macbook por",jia:"52342"},
+						{img: "女/3.jpg",jie: "蝴蝶结系带白色雪纺衬衫女职业OL气质长袖衬衫",jia:"341"}
+					],
+					srrt: [{img: "零食/5.jpg",jie: "美国进口薯片",jia:"12"},
+						{img: "男/0.jpg",jie: "商务休闲男士西装",jia:"432"},
+						{img: "男/1.jpg",jie: "纯色立领薄款衬衫式夹克外套",jia:"123"},
+						{img: "女/2.jpg",jie: "2023年新款娃娃领短袖上衣服洋气小衫女装",jia:"234"},
+						{img: "电子/0.jpg",jie: "华为MateX2",jia:"3453"},
+						{img: "电子/2.jpg",jie: "小米11por",jia:"2344"},
+						{img: "零食/3.jpg",jie: "良品铺子7口味麻薯组合礼盒",jia:"312"},
+						{img: "电子/4.jpg",jie: "联想ThinkBook16",jia:"12334"},
+						{img: "电子/6.jpg",jie: "苹果macbook por",jia:"52342"},
+						{img: "女/3.jpg",jie: "蝴蝶结系带白色雪纺衬衫女职业OL气质长袖衬衫",jia:"341"}
+					],
+					zong: [{img: "男/0.jpg",jie: "商务休闲男士西装",jia:"432"},
+						{img: "男/1.jpg",jie: "纯色立领薄款衬衫式夹克外套",jia:"634"},
+						{img: "男/2.jpg",jie: "工装风蓝色夹克外套",jia:"142"},
+						{img: "男/3.jpg",jie: "棉衣男中长款冬季连帽棉服",jia:"333"},
+						{img: "男/4.jpg",jie: "港风潮流宽松小雏菊花短袖t恤男",jia:"991"},
+						{img: "男/5.jpg",jie: "安德马男装羽绒棉服男加厚棉衣",jia:"213"},
+						{img: "女/0.jpg",jie: "女生春夏印花卫衣",jia:"230"},
+						{img: "女/1.jpg",jie: "2018夏季新款真丝睡衣风西服外套女生",jia:"322"},
+						{img: "女/2.jpg",jie: "2021年新款娃娃领短袖上衣服洋气小衫女装",jia:"324"},
+						{img: "女/3.jpg",jie: "蝴蝶结系带白色雪纺衬衫女职业OL气质长袖衬衫",jia:"134"},
+						{img: "女/4.jpg",jie: "咖啡色系金丝绒百褶半身裙女",jia:"190"},
+						{img: "女/5.jpg",jie: "传统古装绣花汉服女装",jia:"243"},
+						{img: "零食/0.jpg",jie: "好丽友巧克力派",jia:"¥30"},
+						{img: "零食/1.jpg",	jie: "绝艺麻辣鸭脖",jia:"50"},
+						{img: "零食/2.jpg",jie: "良品铺子7口味麻薯组合礼盒",jia:"58"},
+						{img: "零食/3.jpg",jie: "良品铺子水果干大礼包",jia:"55"},
+						{img: "零食/4.jpg",jie: "零食礼包",jia:"78"},
+						{img: "零食/5.jpg",jie: "美国进口薯片",jia:"99"},
+						{img: "电子/6.jpg",jie: "苹果macbook por",jia:"7126"},
+						{img: "电子/0.jpg",jie: "华为MateX2",jia:"31276"},
+						{img: "电子/1.jpg",jie: "魅族13",jia:"3276"},
+						{img: "电子/2.jpg",jie: "小米12por",jia:"34276"},
+						{img: "电子/3.jpg",jie: "华为畅玩10",jia:"1276"},
+						{img: "电子/4.jpg",jie: "联想ThinkBook16",jia:"42376"},
+					],
+					ya: "black",
+					pan: false,
+					zhumi: "",
+					zhuyong: "",
+					chuansrr:[],
+					zhi:false,
+					text:"",
+					ti:"",
+					tiding:"",
+				},
+
+				methods: {
+					fanga() {
+						this.ding = setTimeout(() => {
+							this.imgs[this.sou].style.opacity =0;
+							 this.imgs[this.sou].style.transition="opacity 0.5s linear 0s";
+							this.sou--;
+							if (this.sou < 0) { //这个是判断全部为透明之后
+								for (var i = 3; i >= 0; i--) {
+									this.imgs[i].style.opacity = 1;
+								}
+								this.sou = 3;
+							}
+							this.fanga();
+						},3000);
+					},
+					left() {
+						clearTimeout(this.ding) //这里要先清除上一个定时器
+						if (this.sou == 3) {
+							this.sou = 0;
+							for (var i = 3; i > 0; i--) {
+								this.imgs[i].style.opacity = 0;
+							}
+						} else {
+							this.sou++;
+						}
+						this.imgs[this.sou].style.opacity = 1;
+						 this.imgs[this.sou].style.transition="opacity 0s linear 0s";
+						this.fanga()
+					},
+
+					right() {
+						clearTimeout(this.ding)
+						if (this.sou == 0) {
+							this.sou = 3;
+						} else {
+							this.sou--;
+							for (var d = 3; d > this.sou; d--) {
+								this.imgs[d].style.opacity = 0;
+							}
+						}
+						this.imgs[this.sou].style.opacity = 1;
+						 this.imgs[this.sou].style.transition="opacity 0s linear 0s";
+						this.fanga()
+					},
+					nan(e) {
+						this.ti="";
+						this.srr = [];
+						for (let i = 0; i < 6; i++) {
+							this.srr.push(this.zong[i])
+						}
+						var dd = document.getElementsByClassName("yan");
+						for (let a = 0; a < dd.length; a++) {
+							dd[a].style = "color:black;font-weight:500"
+						}
+						e.target.style = "color:#da295a;font-weight:800"
+					},
+					nv(e) {
+						this.ti="";
+						this.srr = [];
+						for (let i = 6; i < 12; i++) {
+							this.srr.push(this.zong[i])
+						}
+						var dd = document.getElementsByClassName("yan");
+						for (let a = 0; a < dd.length; a++) {
+							dd[a].style = "color:black;font-weight:500"
+						}
+						e.target.style = "color:#da295a;font-weight:800"
+					},
+					lin(e) {
+						this.ti="";
+						this.srr = [];
+						for (let i = 12; i < 18; i++) {
+							this.srr.push(this.zong[i])
+						}
+						var dd = document.getElementsByClassName("yan");
+						for (let a = 0; a < dd.length; a++) {
+							dd[a].style = "color:black;font-weight:500"
+						}
+						e.target.style = "color:#da295a;font-weight:800"
+					},
+					dian(e) {
+						this.ti="";
+						this.srr = [];
+						for (let i = 18; i < 24; i++) {
+							this.srr.push(this.zong[i])
+						}
+						var dd = document.getElementsByClassName("yan");
+						for (let a = 0; a < dd.length; a++) {
+							dd[a].style = "color:black;font-weight:500"
+						}
+						e.target.style = "color:#da295a;font-weight:800"
+					},
+					souye(e) {
+						this.ti="";
+						this.srr = [];
+						for (let i = 0; i < this.srrt.length; i++) {
+							this.srr.push(this.srrt[i])
+						}
+						var dd = document.getElementsByClassName("yan");
+						for (let a = 0; a < dd.length; a++) {
+							dd[a].style = "color:black;font-weight:500"
+						}
+						e.target.style = "color:#da295a;font-weight:800"
+					},
+					denglu(){
+						var d=document.getElementById("d");
+						var m=document.getElementById("m");
+						var y=document.getElementById("dr");
+						if(d.value==""|| m.value==""){
+							alert("账号或密码不能为空");
+						}else
+						if(d.value==this.zhuyong &&m.value==this.zhumi){
+						   y.style.bottom=280+"px"
+						 y.style.transition="bottom 0.7s linear 0s";
+						}else{
+							alert("密码错误")
+						}
+					},
+					goumai(n){ //购物
+					if(this.zhuyong!=""){
+					if(this.chuansrr.indexOf(this.srr[n])!=-1){
+						
+					}else{
+						this.chuansrr.push(this.srr[n]);
+						var ti= document.getElementById("ti");
+			       ti.style.opacity=1;
+					this.tiding=setInterval(()=>{
+						ti.style.opacity=0;
+						 ti.style.transition="opacity 0.5s linear 0s";
+						 clearInterval(this.tiding);
+					 },1000);
+					
+					};
+					}else{
+						alert("请先登录")
+					}
+					
+					},
+					tiaozhuan(){
+						if(this.zhuyong!=""){
+						window["gw"]=this.chuansrr;
+						window.open("gw.html")
+						window["yong"]=this.zhuyong;
+						}else{
+							alert("请先登录")
+						}
+					
+					},
+					ss(){
+						this.srr=[];
+						for(var s=0;s<this.zong.length;s++){
+							if(this.zong[s].jie.indexOf(this.text)!=-1&&this.text!=""){
+								this.srr.push(this.zong[s]);
+							}
+						}
+						if(this.srr.length==0){
+							this.ti="目前还没有“"+this.text+"”商品";
+						}
+						this.text="";
+					}
+				},
+				created() {
+					this.fanga();
+					this.pan = window.opener["pan"];
+					if (this.pan) {
+						this.zhuyong = window.opener["yong"];
+						this.zhumi = window.opener["mi"];
+						
+					}
+					this.zhi=window.opener["zhi"];
+					if(this.zhi){
+						var d=document.getElementById("dr");
+						 d.style.bottom=280+"px"
+						 this.zhuyong=window.opener["gwyong"];
+						 var gwc = window.opener["gwc"];
+						 for (var i = 0; i < gwc.length; i++) {
+						 	this.chuansrr.push(gwc[i]);
+						 };
+					}
+				},
+
+			});
+		</script>
+	</body>
+</html>

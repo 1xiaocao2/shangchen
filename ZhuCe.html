@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.js"></script>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			#box {
+				width: 1206px;
+				margin: 5vh auto;
+				height: 630px;
+				background-color: rgb(241 239 238 / 50%);
+				border-radius: 20px;
+			}
+			.right {
+				width: 400px;
+				height: 450px;
+				border-radius: 40px;
+				float: right;
+				text-align: center;
+				margin: 90px 50px 0px 0px;
+				background-color: rgb(255, 255, 255, 0.6);
+			}
+
+			.zhu_kuang {
+				height: 30px;
+				width: 258px;
+				margin-top: 35px;
+
+			}
+
+			.right>input:first-of-type {
+				margin-top: 50px;
+			}
+
+			.right>span {
+				width: 95px;
+				display: inline-block;
+				font-size: 20px;
+			}
+
+			.z_button {
+				width: 240px;
+				height: 40px;
+				font-size: 22px;
+				border: 0px;
+				background-color: #413d3d;
+				color: white;
+				border-radius: 28px;
+				margin-top: 25px;
+			}
+			.z_button:hover{
+				color: #f8611b;
+				text-decoration:underline;
+				cursor: pointer;
+			}
+			.bei{
+				background-image: url("img/2057766.jpg");
+				background-repeat:no-repeat;
+				background-size: 100%;
+				height: 100vh;
+				 background-position:center;
+			}
+				
+			.bei::before{
+				content:"";
+				display: table;
+			}
+			.zcimg{
+			  width: 300px;
+			  margin: 61px 0px 0px 170px;
+			}
+		</style>
+	</head>
+	<body>
+		<div  class="bei">
+		<div id="box">
+			
+			<div class="right">
+				<h3 style="text-align: center; font-size:30px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);margin-top: 30px;">注册</h3>
+				<span>用户名</span><input type="text" id="yong" class="zhu_kuang"><br>
+				<span>密码</span><input type="password" id="miN" class="zhu_kuang"><br>
+				<span>确认密码</span><input type="password" id="miT" class="zhu_kuang"><br>
+				<button class="z_button" @click="zhu()">注册</button><br>
+				<button class="z_button" @click="deng()">去登陆</button>
+			</div>
+		</div>
+	</div>
+		<script>
+			
+			var vm=new Vue({
+				el:"#box",
+				data:{
+				   yong:"",
+				   mi:""
+				},
+				methods:{
+				 zhu(){
+		  var yh=document.getElementById("yong");
+			var min=document.getElementById("miN");
+			var mit=document.getElementById("miT");
+			  if(yh.value==""||min.value==""||mit.value==""){
+				  alert("请确认信息输入完整")
+			  }else if(min.value==mit.value){
+						 this.yong=yh.value;
+						 this.mi=min.value;
+						 alert("注册成功")
+					 }else{
+						 alert("密码不一致,请重新输入")
+						 yh.value="";
+						 min.value="";
+						 mit.value=""
+					 }
+				 },
+					 
+				 deng(){
+					 window["mi"]=this.mi;
+					 window["yong"]=this.yong;
+					 window["pan"]=true;
+					 window.open("sou.html");
+				 }
+				}
+			})
+ 		</script>
+	</body>
+</html>
